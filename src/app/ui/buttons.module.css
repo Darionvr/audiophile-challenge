@@ -1,0 +1,72 @@
+.orangeButton {
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    transition: background-color .3s ease-out;
+    width: max-content;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--clr-lighter-accent);
+    }
+}
+
+.blackButton {
+    background-color: black;
+    color: white;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    transition: background-color .3s ease-out;
+    width: max-content;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(62, 62, 62);
+    }
+}
+
+.whiteButton {
+    padding: 1rem 2rem;
+    background-color: transparent;
+    border: 1px solid var(--clr-dark);
+    color: var(--clr-dark);
+    font-family: var(--font-manrope);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    transition: background-color .3s ease-out;
+     width: max-content;
+     
+    &:hover {
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
+    }
+}
+
+.transparentButton {
+
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.503);
+    font-weight: bold;
+    font-family: var(--font-manrope);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .8rem;
+    transition: color .3s ease-out;
+
+    img {
+        margin-left: .8rem;
+    }
+
+    &:hover {
+        color: var(--clr-accent);
+    }
+}

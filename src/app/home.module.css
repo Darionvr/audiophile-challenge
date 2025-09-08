@@ -1,0 +1,131 @@
+.page {
+  max-width: 1110px;
+  margin: auto;
+}
+
+/********** HERO SECTION **********/
+
+.hero {
+  background-image: url("/images/home/desktop/image-hero.jpg");
+  background-size: contain;
+  color: white;
+  height: 729px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #191919;
+}
+
+.hero section {
+  width: 100%;
+  max-width: 1110px;
+}
+
+.hero div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 398px;
+  margin-top: 3rem;
+
+
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 58px;
+  }
+}
+
+.newproduct {
+  color: rgba(255, 255, 255, 0.495);
+  font-size: .8rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+
+}
+
+.description {
+  font-size: .9rem;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.752);
+  max-width: 40ch;
+}
+
+/********** Features Blocks SECTION **********/
+
+.zx9speaker {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--clr-accent);
+  background-image: url("/images/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: -10rem -6rem;
+  border-radius: 8px;
+  height: 590px;
+  overflow-y: hidden;
+  margin-top: 8rem;
+
+
+  img {
+    height: fit-content;
+    max-width: 400px;
+    margin-top: 11%;
+  }
+
+}
+
+.zx9speaker div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 35ch;
+  color: white;
+}
+
+.zx9speaker div p:first-of-type {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 58px;
+  font-weight: bold;
+  color: whi;
+}
+
+.zx9speaker div p:last-of-type {
+  font-size: .9rem;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.752);
+}
+
+
+.zx7speaker {
+  background-image: url('/images/home/desktop/image-speaker-zx7.jpg');
+  height: 320px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.yx1earphones{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+
+  div{
+    background-color: var(--clr-grey);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  img{
+      border-radius: 8px;
+  }
+
+}
+
