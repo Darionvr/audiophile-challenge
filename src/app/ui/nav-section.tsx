@@ -26,6 +26,7 @@ const NavSection = () => {
         href: "/earphones"
     }]
     return (
+        
         <section className={styles.navsection}>
             {homeLinks.map((l, i) => (
                 <div key={i}>

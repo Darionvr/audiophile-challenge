@@ -38,6 +38,15 @@
     }
 }
 
+.main a:first-of-type{
+    color: rgba(0, 0, 0, 0.5);
+    transition: color .3s ease-out;
+    letter-spacing: 1px;
+
+    &:hover{
+        color: black;
+    }
+}
 
 .product {
     display: flex;
