@@ -1,6 +1,10 @@
-.page {
+.main {
   max-width: 1110px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-block: 8rem;
 }
 
 /********** HERO SECTION **********/
@@ -107,25 +111,44 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2.5rem;
+  padding-left: 10%;
+  gap: 2rem;
+
+  p {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 }
 
-.yx1earphones{
+
+
+.yx1earphones {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 
 
-  div{
+  div {
     background-color: var(--clr-grey);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15%;
+    gap: 2rem;
   }
-  img{
-      border-radius: 8px;
+
+  p {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  img {
+    border-radius: 8px;
   }
 
 }
-

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <main className={styles.page}>
+      <main className={styles.main}>
         <NavSection />
         <ZX9Speaker />
         <ZX7Speaker />
