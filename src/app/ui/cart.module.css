@@ -1,0 +1,79 @@
+.cart {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    position: fixed;
+    top: 20%;
+    right: 15%;
+    left: auto;
+    bottom: auto;
+    margin: 0;
+    min-width: 350px;
+}
+
+.cart::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.cart div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.entry>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.entry>div:last-of-type {
+    display: flex;
+    align-items: center;
+}
+
+.cart>button {
+    background-color: var(--clr-accent);
+    border: none;
+    font-size: .8rem;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    transition: background-color .3s ease-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ea9f73;
+    }
+}
+
+.counter{
+     display: flex;
+    background-color: var(--clr-grey);
+    align-items: center;
+    font-size: .8rem;
+    font-weight: bold;
+    height: min-content;
+}
+
+.counter span{
+    width: 25px;
+    text-align: center;
+}
+
+.counter button {
+    border: none;
+    background-color: transparent;
+    transition: background-color .3s ease-out;
+    width: 25px;
+    aspect-ratio: 1/1;
+    font-size: .8rem;
+    font-weight: bold;
+
+    &:hover {
+        background-color: rgb(190, 190, 190);
+        color: var(--clr-accent);
+        cursor: pointer;
+    }
+}
+

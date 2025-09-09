@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.container div {
+    display: flex;
+    background-color: var(--clr-grey);
+    gap: 1rem;
+    align-items: center;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.container span{
+    width: 20px;
+    text-align: center;
+}
+
+.container div button {
+    border: none;
+    background-color: transparent;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    width: 48px;
+    aspect-ratio: 1/1;
+    font-size: .8rem;
+    font-weight: bold;
+
+    &:hover {
+        background-color: rgb(190, 190, 190);
+        color: var(--clr-accent);
+        cursor: pointer;
+    }
+}
+
+.addtocart {
+    background-color: var(--clr-accent);
+    border: none;
+    font-size: .8rem;
+    font-weight: bold;
+    color: white;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    transition: background-color .3s ease-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ea9f73;
+    }
+}

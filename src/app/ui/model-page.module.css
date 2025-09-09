@@ -36,14 +36,22 @@
         line-height: 25px;
 
     }
+    h5{
+        font-size: 1.125rem;
+        letter-spacing: 1.3px;
+    }
 }
 
-.main a:first-of-type{
+.main >button{
     color: rgba(0, 0, 0, 0.5);
     transition: color .3s ease-out;
     letter-spacing: 1px;
+    background-color: transparent;
+    border: none;
+    margin-right: auto;
 
     &:hover{
+        cursor: pointer;
         color: black;
     }
 }
@@ -60,7 +68,7 @@
 
 }
 
-.product div {
+.product > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -91,7 +99,9 @@
     display: flex;
     gap: 10%;
 
-
+    h2{
+        margin-bottom: 1.5rem;
+    }
     h4 {
         max-width: 68ch;
         white-space: pre-line;
@@ -101,6 +111,14 @@
         color: var(--clr-accent);
         font-weight: bold;
         margin-right: 1rem;
+    }
+
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+        
     }
 }
 

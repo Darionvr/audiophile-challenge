@@ -1,12 +1,14 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '@/app/ui/navbar.module.css'
 import { usePathname } from 'next/navigation'
+import CartDialog from './cart'
 
 const Navbar = () => {
 
   const pathname = usePathname();
+  const [open, setOpen] = useState(false)
 
   return (
     <nav className={styles.navbar}>
@@ -18,8 +20,10 @@ const Navbar = () => {
           <li><Link href={"/speakers"} className={pathname === "/speakers" ? styles.active : ''}> Speakers </Link></li>
           <li><Link href={"/earphones"} className={pathname === "/earphones" ? styles.active : ''}> Earphones</Link></li>
         </ul>
-        <button> <img src="\images\shared\desktop\icon-cart.svg" alt="Cart Icon" /> </button>
-
+        <button onClick={() => setOpen(true)} aria-label="Abrir carrito"> <img src="\images\shared\desktop\icon-cart.svg" alt="Cart Icon" /> </button>
+        <CartDialog
+          isOpen={open}
+          onClose={() => setOpen(false)} />
       </div>
 
     </nav>
