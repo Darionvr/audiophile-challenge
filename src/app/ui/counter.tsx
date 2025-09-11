@@ -2,15 +2,18 @@
 
 import React, { useState } from 'react'
 import style from '@/app/ui/counter.module.css'
+import { useCart } from '../context/cartContext'
+import { CartItem } from '../context/cartContext'
 
 
-const Counter = () => {
+const Counter = ({item} : {item : CartItem}) => {
 
     const [count, setCount] = useState(1)
     const handleCount = (value: number) => {
-        if(count + value  < 1) return
+        if (count + value < 1) return
         setCount(count + value)
     }
+    const { addToCart } = useCart();
 
 
     return (
@@ -20,7 +23,7 @@ const Counter = () => {
                 <span>{count}</span>
                 <button onClick={() => handleCount(1)}>+</button>
             </div>
-            <button className={style.addtocart}>
+            <button className={style.addtocart} onClick={() => addToCart({ ...item, quantity: count })}>
                 Add to cart
             </button>
         </div>

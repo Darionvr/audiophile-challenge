@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Navbar from "./ui/navbar";
 import Footer from "./ui/footer";
+import { CartProvider } from '@/app/context/cartContext'
 
 
 const manrope = Manrope({
@@ -25,6 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <CartProvider>
       <body className={manrope.variable}>
         <Navbar />
         {children}
@@ -32,6 +34,7 @@ export default function RootLayout({
           <Footer />
         </footer>
       </body>
+    </CartProvider>
     </html>
   );
 }

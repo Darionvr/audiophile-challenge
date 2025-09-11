@@ -6,12 +6,20 @@ import style from '@/app/ui/model-page.module.css'
 import Counter from '@/app/ui/counter';
 
 
-
 const ModelPage = async ({ params }: { params: { slug: string } }) => {
-
 
     const { slug } = await params;
     const model = products.products.find((p) => p.slug.includes(slug))
+    const cartItem = model
+        ? {
+            id: model.id,
+            slug: model.slug,
+            shortName: model.shortName,
+            price: model.price,
+            cartImage: model.cartImage,
+            quantity: 1,
+        }
+        : undefined;
 
     return (
 
@@ -24,7 +32,7 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
                     <h1>{model?.name}</h1>
                     <h4>{model?.description}</h4>
                     <h5>$ {new Intl.NumberFormat('es-CL').format(model?.price ?? 0)}</h5>
-                    <Counter />
+                    {cartItem && <Counter item={cartItem} />}
                 </div>
             </section>
 
