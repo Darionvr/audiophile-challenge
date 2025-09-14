@@ -1,0 +1,215 @@
+.main {
+    padding-top: 10rem;
+    background-color: var(--clr-grey);
+    padding-bottom: 5rem;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 8%;
+    max-width: 1110px;
+    margin: auto;
+
+}
+
+.container>form p, .container>form legend {
+    font-size: .813rem;
+    font-weight: bold;
+    color: var(--clr-accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.main input {
+    font-size: .813rem;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: var(--font-manrope);
+    padding: 1rem;
+    border: solid 1px rgba(0, 0, 0, 0.253);
+    border-radius: 8px;
+    outline: solid 2px transparent;
+    transition: outline-color .3s ease-out;
+    accent-color: var(--clr-accent);
+
+
+    &:focus-visible {
+        outline-color: var(--clr-accent);
+        border: none;
+    }
+}
+
+.group {
+    display: grid;
+}
+
+.main form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+
+}
+
+.group>label {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.span {
+    grid-column: 1/-1;
+}
+
+.container form fieldset {
+    border: none;
+    padding-top: 1rem;
+
+}
+
+.container>form > fieldset p{
+    color: black;
+    text-transform: none;
+}
+
+.radiocontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.radiocontainer > div{
+     display: grid;
+     gap: 1rem;
+     grid-column: 2 / -1;
+
+}
+
+.group:has([type='radio']) {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    border: solid 1px rgba(0, 0, 0, 0.253);
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+
+}
+
+.group:has([type='radio']) label {
+    margin-bottom: 0;
+    font-size: .8rem;
+    font-weight: bold;
+
+    &::after{
+        content: '';
+        position: absolute;
+        inset: 0;
+    }
+}
+
+/*********** Summary  ***********/
+.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 350px;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    height: max-content;
+    border-radius: 8px;
+}
+
+.summary img {
+    max-width: 64px;
+    height: auto;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.entry>div {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    margin-right: auto;
+
+}
+
+.name {
+    font-size: 1.125rem;
+    letter-spacing: 1.3px;
+}
+
+.unitprice {
+    font-size: .9rem;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+
+}
+
+
+.counter {
+    font-size: .9rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.checkout {
+    background-color: var(--clr-accent);
+    font-size: .8rem;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    padding: .8rem 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background-color .3s ease-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ea9f73;
+    }
+}
+
+
+.order ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    list-style-type: none;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    span {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: black;
+        letter-spacing: 1.3px;
+    }
+}
+
+.order ul li>.total {
+    color: var(--clr-accent);
+}
+
+.disable {
+    pointer-events: none;
+    background-color: #eabfa6;
+}

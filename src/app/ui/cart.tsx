@@ -4,6 +4,8 @@ import { useRef, useEffect, useState } from 'react';
 import style from '@/app/ui/cart.module.css'
 import { useCart } from '../context/cartContext';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 
 export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClose: any }) {
@@ -50,7 +52,7 @@ export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClo
                             alt='Product Image'
                         />
                         <div>
-                            <p className={style.name}>{item.shortName}</p>
+                            <Link className={style.name} href={item.slug}> <p >{item.shortName}</p></Link>
                             <p className={style.unitprice}>${item.price}</p>
                         </div>
                         <div className={style.counter}>
@@ -66,7 +68,8 @@ export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClo
                         ${cart.reduce((sum, item) => sum + item.price * item.quantity, 0)}
                     </p>
                 </div>
-                <button className={style.checkout}>Checkout</button>
+                <Link className={style.checkout} href={'/checkout'} 
+                onClick={() => {dialogRef.current?.close(); onClose()}}>Checkout</Link>
             </div>
         </dialog>
     );

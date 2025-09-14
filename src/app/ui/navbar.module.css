@@ -24,6 +24,7 @@
     margin: auto;
     max-width: 1110px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.201);
+    position: relative;
 }
 
 .navbar ul {
@@ -40,4 +41,21 @@
 
 .active{
     color: var(--clr-accent);
+}
+
+
+.items{
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+right: -20px;
+top: 25px;
+width: 23px;
+height: 23px;
+background-color: var(--clr-accent);
+border-radius: 50px;
+font-weight: 400;
+line-height: normal;
+color: white;
 }
