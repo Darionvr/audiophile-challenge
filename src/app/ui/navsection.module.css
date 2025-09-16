@@ -2,6 +2,7 @@
 
 .navsection {
   display: flex;
+  gap: 1rem;
   padding-top: 5rem;
   justify-content: space-around;
   max-width: 1110px;
@@ -36,4 +37,23 @@
   height: fit-content;
   position: absolute;
   top: -35%;
+}
+
+
+@media (max-width:1024px) {
+  .navsection{
+    justify-content: center;
+  }
+  .navsection div>img {
+    max-width: 140px;
+    top: -20%;
+  }
+  .navsection div {
+    max-width: 223px;
+    height: 165px;
+  }
+
+  .navsection div p{
+    font-size: .9rem;
+  }
 }

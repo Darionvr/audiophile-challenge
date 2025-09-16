@@ -27,6 +27,7 @@
     position: relative;
 }
 
+
 .navbar ul {
     display: flex;
     list-style-type: none;
@@ -43,6 +44,9 @@
     color: var(--clr-accent);
 }
 
+.navbarcontainer > button{
+    position: relative;
+}
 
 .items{
 position: absolute;
@@ -50,7 +54,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 right: -20px;
-top: 25px;
+top: -10px;
 width: 23px;
 height: 23px;
 background-color: var(--clr-accent);
@@ -58,4 +62,14 @@ border-radius: 50px;
 font-weight: 400;
 line-height: normal;
 color: white;
+}
+
+@media (max-width: 1024px) {
+    .navbarcontainer {
+       padding-inline: 2rem;
+    }
+    .navbarcontainer ul{
+        display: none;
+    }
+    
 }

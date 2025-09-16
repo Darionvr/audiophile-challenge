@@ -8,11 +8,11 @@ export const ZX9Speaker = () => (
 
     <section className={styles.zx9speaker}>
 
-        <Image
-            src={"/images/home/desktop/image-speaker-zx9.png"}
-            height={918}
-            width={756}
-            alt='zx9 speaker' />
+        <picture>
+            <source media="(min-width: 1024px)" srcSet="/images/home/desktop/image-speaker-zx9.png" />
+            <source media="(min-width: 768px)" srcSet="/images/home/tablet/image-speaker-zx9.png" />
+            <img src="/images/home/mobile/image-speaker-zx9.png" alt="zx9 speaker" />
+        </picture>
 
         <div>
             <p>ZX9 Speaker</p>
@@ -37,13 +37,15 @@ export const ZX7Speaker = () => (
 
 export const YX1Earphones = () => (
     <section className={styles.yx1earphones}>
-        <Image src={"/images/home/desktop/image-earphones-yx1.jpg"}
-            width={540}
-            height={320}
-            alt="earphones yx1" />
-            <div>
-                <p>YX1 Earphones</p>
-                <WhiteButton children="/earphones/yx1-earphones"/>
-            </div>
+        <picture>
+             <source media="(min-width: 1024px)" srcSet="/images/home/desktop/image-earphones-yx1.jpg" />
+            <source media="(min-width: 768px)" srcSet="/images/home/tablet/image-earphones-yx1.jpg" />
+            <img src="/images/home/mobile/image-earphones-yx1.jpg" alt="yx1 earphone" />
+        </picture>
+   
+        <div>
+            <p>YX1 Earphones</p>
+            <WhiteButton children="/earphones/yx1-earphones" />
+        </div>
     </section>
 )

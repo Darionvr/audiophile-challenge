@@ -12,6 +12,8 @@
 .hero {
   background-image: url("/images/home/desktop/image-hero.jpg");
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   color: white;
   height: 729px;
   display: flex;
@@ -23,6 +25,7 @@
 .hero section {
   width: 100%;
   max-width: 1110px;
+  padding-inline: 2rem;
 }
 
 .hero div {
@@ -57,6 +60,8 @@
 }
 
 /********** Features Blocks SECTION **********/
+
+/********** ZX9 **********/
 
 .zx9speaker {
   display: flex;
@@ -103,6 +108,7 @@
   color: rgba(255, 255, 255, 0.752);
 }
 
+/********** ZX7 **********/
 
 .zx7speaker {
   background-image: url('/images/home/desktop/image-speaker-zx7.jpg');
@@ -123,6 +129,7 @@
 }
 
 
+/********** YX1 **********/
 
 .yx1earphones {
   display: grid;
@@ -151,4 +158,63 @@
     border-radius: 8px;
   }
 
+}
+
+
+@media (max-width:1024px) {
+
+  .main {
+    padding-inline: 1.5rem;
+    gap: 2rem;
+  }
+  .hero {
+
+    background-image: url('/images/home/tablet/image-hero.jpg');
+  }
+
+  .hero section {
+    display: flex;
+    justify-content: center;
+
+    div {
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  .zx9speaker {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-block: 2rem;
+    overflow-y: unset;
+    height: auto;
+      background-position: 0 -18rem;
+
+    img {
+      max-width: 200px;
+    }
+
+    div{
+      align-items: center;
+    }
+  }
+  .zx7speaker{
+    background-image: url('/images/home/tablet/image-speaker-zx7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 420px;
+  }
+  .yx1earphones{
+
+img{
+    width: 100%;
+   
+  }
+  div{
+    align-items: center;
+    padding-left: unset;
+  }
+
+  } 
 }
