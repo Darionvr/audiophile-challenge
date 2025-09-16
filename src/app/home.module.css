@@ -218,3 +218,49 @@ img{
 
   } 
 }
+
+@media (max-width: 768px){
+
+    .hero {
+
+    background-image: url('/images/home/mobile/image-hero.jpg');
+    background-size: cover;
+  }
+
+.hero div h1{
+  font-size: 2.25rem;
+}
+ .zx9speaker{
+  padding-inline: 1rem;
+  gap: 2rem;
+  background-position: 50% -8rem;
+  background-size: cover;
+  img{
+    max-width: 170px;
+  }
+ }
+.zx9speaker div p:first-of-type{
+  font-size: 2.25rem;
+}
+
+.zx7speaker{
+    background-image: url('/images/home/mobile/image-speaker-zx7.jpg');
+    background-size: contain;
+    height: 305px;
+    p{
+      letter-spacing: normal;
+
+    }
+}
+
+.yx1earphones{
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  div{
+    align-items: flex-start;
+    padding-left: 10%;
+  }
+}
+
+}
+

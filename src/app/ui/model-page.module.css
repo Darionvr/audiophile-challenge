@@ -36,13 +36,14 @@
         line-height: 25px;
 
     }
-    h5{
+
+    h5 {
         font-size: 1.125rem;
         letter-spacing: 1.3px;
     }
 }
 
-.main >button{
+.main>button {
     color: rgba(0, 0, 0, 0.5);
     transition: color .3s ease-out;
     letter-spacing: 1px;
@@ -50,7 +51,7 @@
     border: none;
     margin-right: auto;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
         color: black;
     }
@@ -68,7 +69,7 @@
 
 }
 
-.product > div {
+.product>div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -99,9 +100,10 @@
     display: flex;
     gap: 10%;
 
-    h2{
+    h2 {
         margin-bottom: 1.5rem;
     }
+
     h4 {
         max-width: 68ch;
         white-space: pre-line;
@@ -113,12 +115,12 @@
         margin-right: 1rem;
     }
 
-    ul{
+    ul {
         list-style: none;
         display: flex;
         flex-direction: column;
         gap: .3rem;
-        
+
     }
 }
 
@@ -140,7 +142,7 @@
 .others {
     text-align: center;
 
-    h2{
+    h2 {
         margin-bottom: 4rem;
     }
 
@@ -162,4 +164,103 @@
         border-radius: 8px;
     }
 
+}
+
+@media (max-width:1024px) {
+    .main {
+        h4 {
+            max-width: none;
+        }
+    }
+
+    .main>button:first-of-type {
+        padding-left: 1rem;
+    }
+
+    .product {
+        padding-inline: 1rem;
+        gap: 2rem;
+        justify-content: flex-start;
+
+        img {
+            max-width: 310px;
+        }
+    }
+
+    .features {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 4rem;
+
+    }
+
+    .images {
+        gap: 1rem;
+        padding: 1rem;
+
+        div {
+            gap: 1rem;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .otherscontainer {
+        justify-content: center;
+        gap: 1rem;
+
+        img {
+            width: 100%;
+            max-width: 230px;
+        }
+    }
+
+}
+
+@media (max-width:768px) {
+    .main {
+        gap: 2rem;
+
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+    }
+
+
+
+    .product {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem;
+
+        img {
+            max-width: 336px;
+        }
+
+    }
+
+
+
+    .images {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .otherscontainer {
+        gap: 3rem;
+        flex-direction: column;
+    }
 }

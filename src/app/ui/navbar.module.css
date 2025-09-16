@@ -73,3 +73,9 @@ color: white;
     }
     
 }
+
+@media (max-width: 768px) {
+.navbarcontainer > a{
+    margin: auto;
+}
+}

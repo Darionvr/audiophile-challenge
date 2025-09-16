@@ -26,7 +26,12 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
         <main className={style.main}>
             <button>Go Back</button>
             <section className={style.product}>
-                <img src={model?.image.desktop} alt={model?.name} />
+                <picture>
+                    <source media="(min-width: 1024px)" srcSet={model?.image.desktop} />
+                    <source media="(min-width: 768px)" srcSet={model?.image.tablet} />
+                    <img src={model?.image.mobile} alt={model?.name} />
+                </picture>
+
                 <div>
                     <p>{model?.new ? "New Product" : ""}</p>
                     <h1>{model?.name}</h1>
@@ -56,11 +61,24 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
 
             <section className={style.images}>
                 <div>
-                    <img src={model?.gallery.first.desktop} alt={model?.name} />
-                    <img src={model?.gallery.second.desktop} alt={model?.name} />
+                    <picture>
+                        <source media="(min-width: 1024px)" srcSet={model?.gallery.first.desktop} />
+                        <source media="(min-width: 768px)" srcSet={model?.gallery.first.tablet} />
+                        <img src={model?.gallery.first.mobile} alt={model?.name} />
+                    </picture>
+                    <picture>
+                        <source media="(min-width: 1024px)" srcSet={model?.gallery.second.desktop} />
+                        <source media="(min-width: 768px)" srcSet={model?.gallery.second.tablet} />
+                        <img src={model?.gallery.second.mobile} alt={model?.name} />
+                    </picture>
                 </div>
 
-                <img src={model?.gallery.third.desktop} alt={model?.name} />
+                <picture>
+                    <source media="(min-width: 1024px)" srcSet={model?.gallery.third.desktop} />
+                    <source media="(min-width: 768px)" srcSet={model?.gallery.third.tablet} />
+                    <img src={model?.gallery.third.mobile} alt={model?.name} />
+                </picture>
+
             </section>
 
             <section className={style.others}>
@@ -68,7 +86,12 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
                 <div className={style.otherscontainer}>
                     {model?.others.map((o, i) => (
                         <div key={i}>
-                            <img src={o.image.desktop} alt={o.name} />
+                            <picture>
+                                <source media="(min-width: 1024px)" srcSet={o.image.desktop} />
+                                <source media="(min-width: 768px)" srcSet={o.image.tablet} />
+                                <img src={o.image.mobile} alt={o.name} />
+                            </picture>
+                          
                             <h3>{o.name}</h3>
                             <OrangeButton children={`/${o.slug}`} />
 

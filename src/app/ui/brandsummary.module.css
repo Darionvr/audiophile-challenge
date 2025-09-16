@@ -33,6 +33,7 @@ span{
     .section{
         flex-direction: column-reverse;
         text-align: center;
+        padding: 1rem;
 
         img{
             width: 100%;
@@ -47,4 +48,23 @@ span{
 
     }
     
+}
+
+@media (max-width:768px){
+
+    .section{
+         max-width: 312px;
+
+        div{
+            padding-inline: 0;
+            padding-top: 2rem;
+        }
+
+        img{
+            max-width: 312px;
+        }
+    }
+    .section p:first-of-type{
+        font-size: 1.75rem;
+    }
 }
