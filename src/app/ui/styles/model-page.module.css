@@ -262,5 +262,11 @@
     .otherscontainer {
         gap: 3rem;
         flex-direction: column;
+        padding-inline: 1rem;
+        img{
+            width: 100%;
+            max-width: unset;
+        }
     }
+    
 }
