@@ -29,7 +29,7 @@ const CheckoutPage = () => {
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const [open, setOpen] = useState(false)
     const { cart, subtotal, vat, shipping, grandTotal } = useCart()
-    const formRef = useRef<HTMLFormElement>(null);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -42,6 +42,7 @@ const CheckoutPage = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const result = formSchema.safeParse(form);
+        //Si no hay 'success' y hay errores
         if (!result.success && result.error) {
             const fieldErrors: { [key: string]: string } = {};
             result.error.issues.forEach((err) => {
@@ -51,7 +52,10 @@ const CheckoutPage = () => {
             setErrors(fieldErrors);
             return;
         }
+        // Si todo está bien errores queda vacío
         setErrors({});
+        // Se abre el modal de confirmación
+        setOpen(true)
 
     };
 
@@ -60,7 +64,7 @@ const CheckoutPage = () => {
         <main className={style.main}>
             <div className={style.container}  >
                 <BackButton />
-                <form ref={formRef} onSubmit={handleSubmit}>
+                <form id='checkout-form' onSubmit={handleSubmit} >
                     <h1>Checkout</h1>
                     <p className={style.span}>Billing Details</p>
                     <div className={style.group}>
@@ -178,6 +182,7 @@ const CheckoutPage = () => {
                             <span className={style.counter}>x{item.quantity}</span>
                         </div>
                     )) : <p> No cart Items</p>}
+
                     <div className={style.order}>
                         <ul>
                             <li> Total <span>  ${subtotal}</span></li>
@@ -191,13 +196,9 @@ const CheckoutPage = () => {
 
                     <button
                         className={`${style.checkout} ${cart.length < 1 ? style.disable : ''}`}
-                        type="button"
-                        onClick={() => {
-                            if (formRef.current) {
-                                formRef.current.requestSubmit();
-                            }
-                            setOpen(true)
-                        }}
+                        type="submit"
+                        form='checkout-form'
+                        
                         disabled={cart.length < 1}
                     >
                         Checkout
