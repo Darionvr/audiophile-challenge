@@ -20,7 +20,7 @@ const Footer = () => {
 
             </div>
             <div className={style.footerinfo}>
-                <p >Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.</p>
+                <p >Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we&apos;re open 7 days a week.</p>
                 <div>
                    <Link href={'#'}>  <img src="/images/shared/desktop/icon-facebook.svg" alt="facebook icon" /></Link>
                     <Link href={'#'}><img src="/images/shared/desktop/icon-instagram.svg" alt="instagram icon" /> </Link>

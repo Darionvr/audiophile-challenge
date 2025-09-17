@@ -5,19 +5,31 @@ export interface Product {
   shortName: string;
   image: {
     desktop: string;
-    // agrega otras resoluciones si las necesitas
   };
   cartImage: string;
   category: string;
   categoryImage: {
     desktop: string;
-    // agrega otras resoluciones si las necesitas
   };
   new: boolean;
   price: number;
   description: string;
   features: string;
-  includedItems: any[]; // tipa mejor si tienes la estructura
-  gallery: object;      // tipa mejor si tienes la estructura
-  others: any[];        // tipa mejor si tienes la estructura
+  IncludedItem: {
+    quantity: number;
+    item: string;
+  };
+  gallery: object;      
+  others: {
+    ProductImage: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+    OtherProduct: {
+      slug: string;
+      name: string;
+      image: string;
+    };
+  };      
 }

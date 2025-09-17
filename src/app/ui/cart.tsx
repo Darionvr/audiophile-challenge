@@ -8,9 +8,9 @@ import Link from 'next/link';
 
 
 
-export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClose: any }) {
+export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
 
-    const { cart, updateQuantity, removeFromCart, clearCart } = useCart();
+    const { cart, updateQuantity, clearCart } = useCart();
     
     const dialogRef = useRef<HTMLDialogElement>(null);
 

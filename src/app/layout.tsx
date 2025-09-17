@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Navbar from "./ui/navbar";
 import Footer from "./ui/footer";
 import { CartProvider } from '@/app/context/cartContext'

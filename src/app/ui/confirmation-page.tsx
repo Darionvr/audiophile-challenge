@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-const ConfirmationPage = ({ isOpen, onClose }: { isOpen: boolean, onClose: any }) => {
+const ConfirmationPage = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
 
     const { cart, grandTotal, clearCart } = useCart();
 

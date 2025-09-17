@@ -1,7 +1,6 @@
 import HeroSection from "./ui/hero-section";
 import NavSection from "./ui/nav-section";
 import styles from '@/app/home.module.css'
-import Image from 'next/image';
 import { ZX7Speaker, ZX9Speaker, YX1Earphones } from './ui/feature-blocks';
 import Brandsummary from "./ui/brandsummary";
 
