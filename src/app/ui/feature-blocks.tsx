@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import { BlackButton, WhiteButton } from "./buttons"
 import styles from '@/app/home.module.css'
 
@@ -17,7 +17,7 @@ export const ZX9Speaker = () => (
         <div>
             <p>ZX9 Speaker</p>
             <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <BlackButton children='/speakers/zx9-speaker' />
+            <BlackButton link='/speakers/zx9-speaker' />
         </div>
     </section>
 )
@@ -29,7 +29,7 @@ export const ZX7Speaker = () => (
 
         <p>ZX7 Speaker</p>
         <WhiteButton
-            children="/speakers/zx7-speaker" />
+            link="/speakers/zx7-speaker" />
 
 
     </section>
@@ -45,7 +45,7 @@ export const YX1Earphones = () => (
    
         <div>
             <p>YX1 Earphones</p>
-            <WhiteButton children="/earphones/yx1-earphones" />
+            <WhiteButton link="/earphones/yx1-earphones" />
         </div>
     </section>
 )

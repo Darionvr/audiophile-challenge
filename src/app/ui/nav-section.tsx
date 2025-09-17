@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { TransparentButton } from './buttons'
 import styles from '@/app/ui/styles/navsection.module.css'
@@ -36,7 +35,7 @@ const NavSection = () => {
                         height={l.height}
                         alt={l.title} />
                     <p>{l.title}</p>
-                    <TransparentButton children={l.href}/>
+                    <TransparentButton link={l.href}/>
                 </div>
             ))}
         </section>

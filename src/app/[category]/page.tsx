@@ -30,7 +30,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
             <p>{p.new ? "New Product" : ""}</p>
             <h2> {p.name}</h2>
             <h3> {p.description}</h3>
-            <OrangeButton children={`${category}/${p.slug}`} />
+            <OrangeButton link={`${category}/${p.slug}`} />
 
           </div>
         </section>

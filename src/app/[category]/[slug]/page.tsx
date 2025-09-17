@@ -94,7 +94,7 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
                             </picture>
                           
                             <h3>{o.name}</h3>
-                            <OrangeButton children={`/${o.slug}`} />
+                            <OrangeButton link={`/${o.slug}`} />
 
                         </div>
                     ))}
