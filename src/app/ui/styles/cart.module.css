@@ -137,7 +137,12 @@
     font-size: 1.125rem;
     letter-spacing: 1.3px;
 }
-
+.emptymessage{
+    margin: auto;
+}
+.emptyicon{
+    margin: auto;
+}
 @media (max-width:1024px) {
     .cart {
         right: unset;

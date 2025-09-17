@@ -37,7 +37,8 @@ export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClo
     return (
         <dialog ref={dialogRef} className={style.cart}>
             <div className={style.container}>
-
+   {cart.length >= 1 ? ( 
+    <> 
                 <div>
                     <p> CART <span>({cart.reduce((sum, item) => sum + item.quantity, 0)})</span></p>
                     <button onClick={clearCart}>Remove All</button>
@@ -69,7 +70,11 @@ export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClo
                 </div>
                 <Link className={style.checkout} href={'/checkout'} 
                 onClick={() => {dialogRef.current?.close(); onClose()}}>Checkout</Link>
-            </div>
+                </>) : ( <> 
+                <p className={style.emptymessage}> Your Cart is empty</p>
+                <img className={style.emptyicon} src="/images/cart/empty-cart.png" alt="empty cart icon" />
+                </>) }
+            </div> 
         </dialog>
     );
 }
