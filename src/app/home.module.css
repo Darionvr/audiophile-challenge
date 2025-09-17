@@ -204,6 +204,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 420px;
+   
   }
   .yx1earphones{
 
@@ -245,8 +246,9 @@ img{
 
 .zx7speaker{
     background-image: url('/images/home/mobile/image-speaker-zx7.jpg');
-    background-size: contain;
+    background-size: cover;
     height: 305px;
+    width: 100%;
     p{
       letter-spacing: normal;
 

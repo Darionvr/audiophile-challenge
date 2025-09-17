@@ -5,12 +5,25 @@
 
 }
 
+
 .container {
     display: flex;
     justify-content: space-between;
     gap: 8%;
     max-width: 1110px;
     margin: auto;
+    position: relative;
+
+}
+/*** GO BACK BUTTON **/
+.container > button:first-of-type{
+    position: absolute;
+    top: -2rem;
+    border: none;
+    background-color: transparent;
+    font-size: .9rem;
+    color: rgba(0, 0, 0, 0.507);
+    letter-spacing: 1px;
 
 }
 
@@ -236,4 +249,30 @@
 .disable {
     pointer-events: none;
     background-color: #eabfa6;
+}
+
+@media (max-width: 1024px) {
+    .main{
+        padding-inline:1rem ;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+    }
+    .summary{
+        max-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .main form{
+        grid-template-columns: 1fr;
+    }
+    .radiocontainer{
+       display: flex;
+       flex-direction: column;
+       gap: 1rem;
+    }
 }

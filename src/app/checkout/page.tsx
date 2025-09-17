@@ -58,8 +58,8 @@ const CheckoutPage = () => {
 
     return (
         <main className={style.main}>
-            <button> Go Back</button>
             <div className={style.container}  >
+            <button> Go Back</button>
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <h1>Checkout</h1>
                     <p className={style.span}>Billing Details</p>

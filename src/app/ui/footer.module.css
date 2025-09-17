@@ -116,13 +116,15 @@
     }
    }
  .footercontainer > p:last-of-type{
-   bottom: 5rem;
+   bottom: 6rem;
    width: max-content;
-    left: 20%;
+    left: 50%;
+    translate: -50%;
   
  }
  .footercontainer::before{
     left: 50%;
+    translate: -50%;
    
  }
 }
