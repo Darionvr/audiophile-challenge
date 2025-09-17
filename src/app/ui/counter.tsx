@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import style from '@/app/ui/counter.module.css'
+import style from '@/app/ui/styles/counter.module.css'
 import { useCart } from '../context/cartContext'
 import { CartItem } from '../context/cartContext'
 

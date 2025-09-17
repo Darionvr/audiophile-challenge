@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import style from '@/app/ui/footer.module.css'
+import style from '@/app/ui/styles/footer.module.css'
 
 
 const Footer = () => {

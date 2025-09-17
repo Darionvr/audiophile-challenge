@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import styles from '@/app/ui/navbar.module.css'
+import styles from '@/app/ui/styles/navbar.module.css'
 import { usePathname } from 'next/navigation'
 import CartDialog from './cart'
 import { useCart } from '../context/cartContext'
@@ -11,7 +11,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false)
   const { cart } = useCart()
-  console.log(cart)
+
 
   return (
     <nav className={styles.navbar}>

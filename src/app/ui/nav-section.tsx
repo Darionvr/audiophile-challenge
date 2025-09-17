@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { TransparentButton } from './buttons'
-import styles from '@/app/ui/navsection.module.css'
+import styles from '@/app/ui/styles/navsection.module.css'
 
 const NavSection = () => {
 

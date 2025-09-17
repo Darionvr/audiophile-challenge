@@ -38,7 +38,7 @@
     font-weight: 400;
     text-decoration: underline;
 
-    &:hover{
+    &:hover {
         color: var(--clr-accent);
     }
 }
@@ -139,11 +139,11 @@
 }
 
 @media (max-width:1024px) {
-    .cart{
+    .cart {
         right: unset;
         left: 50%;
-          translate: -50%;
-           min-width: 320px;
+        translate: -50%;
+        min-width: 320px;
     }
-    
+
 }

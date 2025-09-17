@@ -1,8 +1,7 @@
 import React from 'react'
 import products from '@/data/products.json'
 import { OrangeButton } from '../ui/buttons'
-import Link from 'next/link'
-import style from '@/app/ui/category.module.css'
+import style from '@/app/ui/styles/category.module.css'
 
 
 

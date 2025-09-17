@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '@/app/ui/brandsummary.module.css'
+import style from '@/app/ui/styles/brandsummary.module.css'
 
 
 const Brandsummary = () => {

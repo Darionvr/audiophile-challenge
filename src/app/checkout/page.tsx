@@ -1,11 +1,14 @@
 'use client'
 
 import React, { useState, useRef } from 'react'
-import style from '@/app/ui/checkout-page.module.css'
+import style from '@/app/ui/styles/checkout-page.module.css'
 import Link from 'next/link'
 import { useCart } from '../context/cartContext'
 import Image from 'next/image'
 import { formSchema } from '../validations/formSchema'
+import ConfirmationPage from '../ui/confirmation-page'
+import BackButton from '../ui/back-button'
+
 
 
 
@@ -20,17 +23,13 @@ const CheckoutPage = () => {
         city: "",
         country: "",
         method: "",
-                 eMoneyNumber: "", // <-- agrega esto
-    eMoneyPin: "",
+        eMoneyNumber: "", // <-- agrega esto
+        eMoneyPin: "",
     });
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
-    const { cart } = useCart()
+    const [open, setOpen] = useState(false)
+    const { cart, subtotal, vat, shipping, grandTotal } = useCart()
     const formRef = useRef<HTMLFormElement>(null);
-
-    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const vat = Math.round(subtotal * 0.2);
-    const shipping = 50;
-    const grandTotal = subtotal + shipping + vat;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -56,10 +55,11 @@ const CheckoutPage = () => {
 
     };
 
+
     return (
         <main className={style.main}>
             <div className={style.container}  >
-            <button> Go Back</button>
+                <BackButton />
                 <form ref={formRef} onSubmit={handleSubmit}>
                     <h1>Checkout</h1>
                     <p className={style.span}>Billing Details</p>
@@ -75,7 +75,7 @@ const CheckoutPage = () => {
                     </div>
                     <div className={style.group}>
                         <label htmlFor="phone">Phone Number {errors.phone_number && <span>{errors.phone_number}</span>}</label>
-                        <input type="number" name="phone_number" id="phone" placeholder='+56 9 123 - 4567' onChange={handleChange} />
+                        <input type="text" name="phone_number" id="phone" placeholder='+56 9 123 - 4567' onChange={handleChange} />
 
 
                     </div>
@@ -196,6 +196,7 @@ const CheckoutPage = () => {
                             if (formRef.current) {
                                 formRef.current.requestSubmit();
                             }
+                            setOpen(true)
                         }}
                         disabled={cart.length < 1}
                     >
@@ -203,7 +204,9 @@ const CheckoutPage = () => {
                     </button>
                 </section>
             </div>
-
+            <ConfirmationPage
+                isOpen={open}
+                onClose={() => setOpen(false)} />
 
         </main>
     )

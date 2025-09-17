@@ -1,9 +1,7 @@
 import React from 'react'
-import Footer from '../ui/footer'
-import Navbar from '../ui/navbar'
 import NavSection from '../ui/nav-section'
 import Brandsummary from '../ui/brandsummary'
-import style from '@/app/ui/category.module.css'
+import style from '@/app/ui//styles/category.module.css'
 
 
 

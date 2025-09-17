@@ -1,0 +1,122 @@
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: none;
+    padding: 2rem;
+    border-radius: 8px;
+
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.container {
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+    width: min-content;
+}
+.container>div {
+    display: grid;
+    gap: 1rem;
+}
+
+.container>div p:first-of-type {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container>div p:last-of-type {
+    font-size: .9rem;
+    color: rgba(0, 0, 0, 0.503);
+}
+
+.container section {
+    display: flex;
+    font-size: .9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    background-color: var(--clr-grey);
+    padding: 2rem;
+    gap: 2rem;
+    
+    border-radius: 8px 0 0 8px;
+
+    img {
+        max-width: 64px;
+        height: auto;
+    }
+}
+
+.unitprice {
+
+    color: rgba(0, 0, 0, 0.496);
+    font-weight: bold;
+
+}
+.entry p:last-of-type{
+    color: rgba(0, 0, 0, 0.496);
+}
+.grandTotal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+    background-color: var(--clr-lighter-dark);
+    padding: 2rem;
+    border-radius: 0 8px 8px 0;
+}
+.grandTotal p:first-of-type{
+     color: rgba(255, 255, 255, 0.496);
+     font-weight: 400;
+     min-width: 12ch;
+}
+.grandTotal p:last-of-type{
+    color: white;
+}
+
+.container > a{
+        background-color: var(--clr-accent);
+    color: var(--clr-light);
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    transition: background-color .3s ease-out;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--clr-lighter-accent);
+    }
+}
+
+@media (max-width:768px) {
+    .container>div p:first-of-type{
+        font-size: 1.5rem;
+    }
+    .container section{
+        flex-direction: column;
+    }
+
+
+    .entry{
+        border-radius: 8px 8px 0 0;
+    }
+    .grandTotal{
+        border-radius: 0 0 8px 8px;
+    }
+    
+}

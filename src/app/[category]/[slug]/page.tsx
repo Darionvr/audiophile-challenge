@@ -1,12 +1,13 @@
-import Link from 'next/link'
+
 import React from 'react'
 import products from '@/data/products.json'
 import { OrangeButton } from '@/app/ui/buttons';
-import style from '@/app/ui/model-page.module.css'
+import style from '@/app/ui/styles/model-page.module.css'
 import Counter from '@/app/ui/counter';
-
+import BackButton from '@/app/ui/back-button';
 
 const ModelPage = async ({ params }: { params: { slug: string } }) => {
+
 
     const { slug } = await params;
     const model = products.products.find((p) => p.slug.includes(slug))
@@ -24,7 +25,7 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
     return (
 
         <main className={style.main}>
-            <button>Go Back</button>
+            <BackButton/>
             <section className={style.product}>
                 <picture>
                     <source media="(min-width: 1024px)" srcSet={model?.image.desktop} />

@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
-import style from '@/app/ui/cart.module.css'
+import { useRef, useEffect } from 'react';
+import style from '@/app/ui//styles/cart.module.css'
 import { useCart } from '../context/cartContext';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ import Link from 'next/link';
 export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClose: any }) {
 
     const { cart, updateQuantity, removeFromCart, clearCart } = useCart();
-
+    
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {
@@ -37,7 +37,6 @@ export default function CartDialog({ isOpen, onClose }: { isOpen: boolean, onClo
     return (
         <dialog ref={dialogRef} className={style.cart}>
             <div className={style.container}>
-
 
                 <div>
                     <p> CART <span>({cart.reduce((sum, item) => sum + item.quantity, 0)})</span></p>
