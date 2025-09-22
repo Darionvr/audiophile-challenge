@@ -27,7 +27,7 @@
     position: relative;
 }
 
-.hamburguer,
+.hamburger,
 .closemenu {
     display: none;
 }
@@ -71,7 +71,7 @@
 
 @media (max-width: 1024px) {
 
-    .hamburguer,
+    .hamburger,
     .closemenu {
         display: block;
     }
