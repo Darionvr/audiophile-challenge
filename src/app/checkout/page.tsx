@@ -10,8 +10,6 @@ import ConfirmationPage from '../ui/confirmation-page'
 import BackButton from '../ui/back-button'
 
 
-
-
 const CheckoutPage = () => {
 
     const [form, setForm] = useState({
@@ -42,7 +40,7 @@ const CheckoutPage = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const result = formSchema.safeParse(form);
-        //Si no hay 'success' y hay errores
+        //Si no hay 'success' y sí hay errores
         if (!result.success && result.error) {
             const fieldErrors: { [key: string]: string } = {};
             result.error.issues.forEach((err) => {
@@ -193,12 +191,10 @@ const CheckoutPage = () => {
 
                     </div>
 
-
                     <button
                         className={`${style.checkout} ${cart.length < 1 ? style.disable : ''}`}
                         type="submit"
                         form='checkout-form'
-                        
                         disabled={cart.length < 1}
                     >
                         Checkout
