@@ -1,16 +1,20 @@
 
 import React from 'react'
-import products from '@/data/products.json'
 import { OrangeButton } from '@/app/ui/buttons';
 import style from '@/app/ui/styles/model-page.module.css'
 import Counter from '@/app/ui/counter';
 import BackButton from '@/app/ui/back-button';
+import { db } from '@/lib/mongodb'
+import type { Product } from '@/types.product';
 
 const ModelPage = async ({ params }: { params: { slug: string } }) => {
 
 
     const { slug } = await params;
-    const model = products.products.find((p) => p.slug.includes(slug))
+
+  const model: Product | null = await db.collection<Product>("productos").findOne({ slug });
+
+
     const cartItem = model
         ? {
             id: model.id,

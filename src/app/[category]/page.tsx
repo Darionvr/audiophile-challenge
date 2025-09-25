@@ -1,14 +1,14 @@
 import React from 'react'
-import products from '@/data/products.json'
 import { OrangeButton } from '../ui/buttons'
 import style from '@/app/ui/styles/category.module.css'
+import { db } from '@/lib/mongodb'
 
 
 
 const categoryPage = async ({ params }: { params: { category: string } }) => {
 
   const { category } = await params
-  const productType = products.products.filter((p) => p.category === category).sort((a, b) => b.price - a.price)
+  const productType = await db.collection("productos").find({ category }).sort({ price: -1 }).toArray();
 
   return (
     <>
