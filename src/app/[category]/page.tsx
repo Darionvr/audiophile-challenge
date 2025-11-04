@@ -5,9 +5,9 @@ import { db } from '@/lib/mongodb'
 
 
 
-const categoryPage = async ({ params }: { params: { category?: string } }) => {
+const categoryPage = async ({ params }: { params: { category: string } }) => {
 
-  const category = params?.category;
+  const { category } = await params
   const productType = await db.collection("productos").find({ category }).sort({ price: -1 }).toArray();
 
   return (
