@@ -10,13 +10,15 @@ import type { Product } from '@/types.product';
 const ModelPage = async ({ params }: { params: { slug: string } }) => {
 
 
-    const { slug } = await params || {};
-    if (!slug) {
-        // Maneja el caso donde slug no está definido
-        return <div>Error: Slug no encontrado</div>;
-    }
+    const { slug } = await params 
 
-    const model: Product | null = await db.collection<Product>("productos").findOne({ slug });
+    let model: Product | null = null;
+    try {
+        model = await db.collection<Product>("productos").findOne({ slug });
+    } catch (error) {
+        console.error("Error al conectar a la base de datos:", error);
+        return <div>Error al cargar el producto. Por favor, inténtalo más tarde.</div>;
+    }
 
 
     const cartItem = model
@@ -33,7 +35,7 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
     return (
 
         <main className={style.main}>
-            <BackButton />
+            <BackButton/>
             <section className={style.product}>
                 <picture>
                     <source media="(min-width: 1024px)" srcSet={model?.image.desktop} />
@@ -100,7 +102,7 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
                                 <source media="(min-width: 768px)" srcSet={o.image.tablet} />
                                 <img src={o.image.mobile} alt={o.name} />
                             </picture>
-
+                          
                             <h3>{o.name}</h3>
                             <OrangeButton link={`/${o.slug}`} />
 
