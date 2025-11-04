@@ -12,13 +12,7 @@ const ModelPage = async ({ params }: { params: { slug: string } }) => {
 
     const { slug } = await params 
 
-    let model: Product | null = null;
-    try {
-        model = await db.collection<Product>("productos").findOne({ slug });
-    } catch (error) {
-        console.error("Error al conectar a la base de datos:", error);
-        return <div>Error al cargar el producto. Por favor, inténtalo más tarde.</div>;
-    }
+  const model: Product | null = await db.collection<Product>("productos").findOne({ slug });
 
 
     const cartItem = model
