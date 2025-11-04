@@ -7,7 +7,11 @@ import { db } from '@/lib/mongodb'
 
 const categoryPage = async ({ params }: { params: { category: string } }) => {
 
-  const { category } = await params
+  const { category } = await params || {};
+    if (!category) {
+        // Maneja el caso donde slug no está definido
+        return <div>Error: Slug no encontrado</div>;
+    }
   const productType = await db.collection("productos").find({ category }).sort({ price: -1 }).toArray();
 
   return (
