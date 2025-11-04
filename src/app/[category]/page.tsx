@@ -8,13 +8,29 @@ import { db } from '@/lib/mongodb'
 const categoryPage = async ({ params }: { params: { category: string } }) => {
 
   const { category } = await params 
-  
-  let productType = [];
+
+ let productType = []
   try {
-    productType = await db.collection("productos").find({ category }).sort({ price: -1 }).toArray();
+    productType = await db.collection("productos")
+      .find({ category })
+      .sort({ price: -1 })
+      .toArray()
+
+    if (!productType.length) {
+      return (
+        <main className={style.main}>
+          <h1>No products found in {category}</h1>
+        </main>
+      )
+    }
   } catch (error) {
-    console.error("Error al conectar a la base de datos:", error);
-    return <div>Error al cargar los productos. Por favor, inténtalo más tarde.</div>;
+    console.error("Database connection failed:", error)
+    return (
+      <main className={style.main}>
+        <h1>Failed to load products</h1>
+        <p>Please try again later</p>
+      </main>
+    )
   }
   return (
     <>
